@@ -1,0 +1,129 @@
+.jm{
+background: url(https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80);
+background-repeat: no-repeat;
+background-size: auto;
+/* background-size: cover; */
+height: 500px;
+width: 100%;
+margin-top: 50px;
+text-align: center;
+font-family: 'Sriracha', cursive;
+padding-top: 100px;
+}
+.jm h1{
+  color: white;
+}
+.jm h3{
+  color: #ffc107;
+}
+.nb{
+  background: pink;
+}
+.post{
+  text-align: center;
+}
+
+.po h2{
+  color: red;
+  font-family:  'Bitter', serif;
+}
+.head h3{
+  color: #05f7df;
+  font-family: 'Bellota', cursive;
+}
+.po h1{
+  font-family: 'Bitter', serif;
+}
+.head h1{
+  font-family: 'Bellota', cursive;
+}
+.ch{
+  background: #00ffa1;
+}
+h5
+{
+  font-family: 'Lobster', cursive;
+}
+.post p{
+  font-family: 'Roboto Mono', monospace;
+}
+/* .jb{
+  height: 500px;
+} */
+.jb h1{
+  font-family: 'MuseoModerno', cursive;
+  text-align: center;
+  font-size: 200px;
+  color: #0000002e;
+}
+img{
+  /* border: 2px solid red; */
+  width: 200px;
+  height: 200px;
+}
+.detail{
+  text-align: center;
+}
+#da{
+  font-family: 'Lobster', cursive;
+  border-bottom: 2px solid #0000003d;
+  border-left: 0px;
+  padding-bottom: 10px;
+}
+.detail h1{
+  color:red;
+  background: #00ffa1;
+  font-family: 'Dancing Script', cursive;
+  margin-top: 50px;
+}
+.detail p{
+  font-family: 'Bitter', serif;
+}
+.detail p{
+  border-left: 2px solid black;
+  /* border-right: 2px solid black; */
+}
+#im{
+  margin-left: 480px;
+  border: 2px solid black;
+  border-radius: 100px;
+}
+.co h1{
+  text-align: center;
+}
+.sm a {
+  margin-left: 150px;
+  /* padding: 10px; */
+  display: inline;
+}
+.mail{
+background: url('https://storage.googleapis.com/wordpress-www-vendasta/resources/email-scipts-background-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Bitter', serif;
+  padding: 2%;
+}
+.bt{
+  background: #e80b48;
+}
+.com {
+
+  /* text-align: center; */
+  font-family: 'Bitter', serif;
+  margin-top: 20px;
+}
+#jumbo{
+  background: white;
+}
+.mail{
+  font-weight:bolder;
+  color: white;
+}
+#tp{
+  font-family: 'Dancing Script', cursive;
+}
+.ic{
+  height: auto;
+  width: auto;
+}

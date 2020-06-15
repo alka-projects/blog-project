@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ {%extends 'testapp/base.html'%}
+ {% load blog_tags %}
+ {% block child_block %}
+ <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" > -->
+<div class="jumbotron jumbotron-fluid jm">
+  <div class="container">
+    <h1 class="display-4">Welcome to Alka's Blog</h1><hr>
+    <h3>Here you can see some life related my personal experiance.</h3>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- <div class="container po"> -->
+<div class="container head">
+  <div class="jumbotron" id='jumbo'>
+
+
+  <h3>Latest From The Blog</h3><hr>
+  <h1>Blog Timeline</h1><br><br>
+  <h2  id="tp">The total number of published posts upto today: {%total_posts%}</h2><br><br>
+
+  <!-- <div class="post">
+{%for post in post_list %}
+<h2> <a href="#">{{post.title}}</a> </h2>
+<p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+{{post.body|truncatewords:30|linebreaks}}<hr><br><br>
+{%endfor%}
+</div>
+</div> -->
+<!-- <h1>Alka's Blog</h1> -->
+{%if tag%}
+<h2>Posts tagged with "{{tag.name}}"</h2>
+{%endif%}
+{%for post in post_list %}
+<div class="card text-center container po">
+  <div class="card-header ch">
+    <h2> {{post.title}} </h2>
+  </div>
+  <p>Tags: {%for tag in post.tags.all %}
+    <a href="{%url "post_list_by_tag_name" tag.slug %}">{{tag.name}}</a>
+    {%if not forloop.last%}, {%endif%}
+    {%endfor%}</p>
+  <div class="card-body post">
+    <h5 class="card-title ">Published on {{post.publish}} by {{post.author|title}}</h5>
+    <p class="card-text">{{post.body|truncatewords:30|linebreaks}}</p>
+    <a href="{{post.get_absolute_url}}" class="btn btn-primary">Read More</a>
+  </div>
+  <!-- <div class="card-footer text-muted">
+    2 days ago
+  </div> -->
+</div><br><br>
+
+{%endfor%}
+ {% include 'testapp/pagination.html' with page=post_list%}
+ </div>
+ {%endblock%}

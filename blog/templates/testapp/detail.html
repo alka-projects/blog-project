@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{% block child_block %}
+<div class="container detail">
+<h1>{{post.title}}</h1>
+<p id='da'>Published on {{post.publish}} by {{post.author|title}}</p>
+{{post.body|linebreaks}}
+<a href="/{{post.id}}/share" class='btn btn-lg btn-primary' id='email'>Share Post By Email</a>
+</div>
+<div class="container">
+<h2>Similar Posts</h2>
+{%if similar_posts%}
+{%for post in similar_posts%}
+<h3> <a href="{{post.get_absolute_url}}">{{post.title}}</a> </h3>
+{%endfor%}
+{%else%}
+<p>No Similar Posts yet</p>
+{%endif%}
+<div class="com">
+  {% with comments.count as comments_count %}
+  <h2>{{comments_count}} Comment{{comments_count|pluralize}}</h2>
+  {% endwith%}
+  {%if comments %}
+  {%for comment in comments %}
+  <p id='ch'> comment {{forloop.counter}} by {{comment.name}} on  {{comment.created}}</p>
+  <div class="cb">{{comment.body|linebreaks}}</div>
+  <hr>
+  {%endfor%}
+  {%else%}
+  <p>There are NO Comments Yet !!!</p>
+  {%endif%}
+  {%if csubmit %}
+  <h2>Your Comment Added Succefully</h2>
+  <form method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="" value="Submit Comment" class="bt">
+  </form>
+  {%else%}
+  <form method="post">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="" value="Submit Comment" class="bt">
+  </form>
+  </div>
+  </div>
+  {%endif%}
+{%endblock%}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load blog_tags %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ <link rel="stylesheet" href="{% static "css/base.css"%}">
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&family=Bitter:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&family=Bitter:ital@1&family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,700&family=Bitter:ital@1&family=Lobster&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=MuseoModerno:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<body>
+  <nav class="navbar navbar-light navbar-expand-lg nb">
+   <a class="navbar-brand" href="/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#cccccc"></path><g fill="#000000"><path d="M86,22.704c-34.95866,0 -63.296,28.33734 -63.296,63.296c0,34.95866 28.33734,63.296 63.296,63.296c34.95866,0 63.296,-28.33734 63.296,-63.296c0,-34.95866 -28.33734,-63.296 -63.296,-63.296zM82.94163,61.232h6.11137l18.25888,49.536h-6.48225l-4.97725,-14.17925h-19.70475l-4.97725,14.17925h-6.48763zM85.72588,69.23l-7.7615,22.10737h16.07125l-7.7615,-22.10737z"></path></g></g></svg></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav mr-auto">
+       <li class="nav-item active">
+         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/about">About us</a>
+       </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Latest Posts
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <h6 class="dropdown-item">
+            {% show_latest_posts 100 %}
+          </h6>
+
+          <!-- <h4 class="dropdown-item" >{% show_latest_posts 100 %} </h4> -->
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Most Commented post
+           </a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <h6 class="dropdown-item">
+                 {% get_most_commented_posts as most_commented_posts%}
+                 <ul>
+                   {% for post in most_commented_posts  %}
+                   <li><a href="{{post.get_absolute_url}}" id='la'>{{post.title}}</a></li>
+                   {% endfor %}
+                 </ul>
+             </h6>
+        </div>
+      </li>
+     </ul>
+   </div>
+ </nav>
+   {% block child_block%}
+   {%endblock%}
+
+
+</body>
+</html>

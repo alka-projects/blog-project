@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{% load static %}
+{% block child_block %}
+<div class="jumbotron jumbotron-fluid jb ">
+  <div class="container ">
+    <h1 class="display-4">Alka's Blog</h1>
+    </div>
+</div>
+<div class="container co">
+  <h1>About the author</h1>
+<img  id="im" src="{% static "images/img.jpg"%}" alt="">
+<h1>Hi, I'm Alka Rani, a Personal,
+Blogger from India.</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+<div class="container sm">
+<a href="#"><img  class="ic" src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+<a href="#"><img  class="ic" src="https://img.icons8.com/fluent/48/000000/facebook-new.png"/></a>
+<a href="#"><img  class="ic" src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+</div><br><br><br>
+</div>
+{%endblock%}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{% block child_block %}
+<div class=" mail">
+ {%if sent%}
+ <h1>Email Successfully Sent !!!</h1>
+ <p>"{{post.title}}" was sent by email</p>
+ {%else%}
+ <h1>Share "{{post.title}}" by Email!!!</h1><hr>
+ <form method="post">
+   {{form.as_p}}
+   {%csrf_token%}
+   <input type="submit" name="" class='btn btn-lg btn-success bt' value="Send Mail">
+ </form>
+ </div>
+ {%endif %}
+{%endblock%}
